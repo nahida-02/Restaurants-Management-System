@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/4bf265f533.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="/css/rating.css" />
+    <title>Rating</title>
+  </head>
+
+  <body>
+    <header>
+      <h1 style="color: rgb(255, 255, 255)">Burgerology</h1>
+      <img src="/img/logo-2.png" style="width: 140px; height: 30px" />
+      <h2 style="color: rgb(0, 0, 0); margin-top: 50px">Ratings</h2>
+      <p style="color: rgb(66, 12, 12); font-size: large; font-weight: 800">
+        Do you like our foods?
+        <span style="color: rgb(255, 255, 255)">Please give us ratings...</span>
+      </p>
+      <!-- // <i class="fa fa-user-o" aria-hidden="true"></i> -->
+    </header>
+    <section class="mt-5">
+      <div class="container">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col " class="text-black">Product Name</th>
+                <th scope="col " class="text-black">Rating</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for (let it of item){ %>
+
+              <tr>
+                <td>
+                  <div class="main">
+                    <div class="d-flex">
+                      <p><%= it.foodname %></p>
+                    </div>
+                  </div>
+                </td>
+
+                <td>
+                  <p id="root1"><%= it.rating %></p>
+                </td>
+
+                <td>
+                  <div class="c-c">
+                     <a href=<%="/rate/increase/" + it.foodid +"/" + name %>>   
+                    
+                       <button>+</button></a
+                    >
+                  </div>
+                </td>
+                <td>
+                  <div class="c-c">
+                    <a href=<%="/rate/decrease/" + it.foodid + "/" +name %>>   
+                      <button>-</button></a
+                    >
+                  </div>
+                </td>
+              </tr>
+              <% } %>
+              <!--
+                        <tr>
+                            <td>
+                                <div class="main">
+                                    <div class="d-flex">
+                                        <p>Pizza</p>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>
+
+                                <p id="root2">0</p>
+                            </td>
+
+                            <td>
+                                <div class="c-c">
+                                    <button>+</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="c-c">
+                                    <button>-</button>
+                                </div>
+                            </td>
+                        </tr>-->
+            </tbody>
+          </table>
+        </div>
+      </div>
+        
+
+      <div class="col-lg-4 offset-lg-4">
+        <div class="checkout">
+       <a class="proceed-btn" href=<%="/rate/save/" + name %>>Done</a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burgerology</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <!-- font awesome cdn link -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <!-- custom css file link -->
+
+    <link rel="stylesheet" href="/css/menu.css">
+
+    <link rel="icon" href="/img/burger-4.png" sizes="16x16">
+</head>
+
+<body>
+    <!-- header section starts -->-->
+
+    <div class=" banner ">
+        <div class="slider ">
+            <img src="/img/logo.jpg " id="slideImg">
+        </div>
+        <div class="overlay ">
+            <div class="nabar ">
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <a href="#" class="logo"><i class="fas fa-utensils"></i>Burgerology</a>
+        <nav class="navbar">
+            <a class="active" href="#home">Home</a>
+            <a href="#dishes">Dishes</a>
+            <a href="#order">Order</a>
+            <a href="#table">Table Booking</a>
+            <a href="#offer">Offers</a>
+            <a href="#review">Reviews</a>
+             <a href="/logout">Logout</a>
+        </nav>
+
+
+        <div class="icons">
+            <i class="fas fa-user" id="users"></i>
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-shopping-cart"></a>
+        </div>
+    </header>
+    <!-- header section ends -->
+
+
+    <!-- search-form -->
+
+    <form action="" id="search-form">
+        <input type="search" placeholder="search here...." name="" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+
+
+
+    <!-- home section starts--> 
+    <section class="home" id="home">
+        <div class="swiper home-slider">
+            <div class="swiper-wrapper wrapper">
+                <% for (let spec of special){ %>
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>Our Special Dish</span>
+                        <h3><%= spec.FOOD_NAME %></h3>
+                        <p>
+                            <h4>Price.<%= spec.PRICE %> Tk </h4>
+                            <h4 style="color:#813e3f;">Rating:9.5/10</h4>
+                        </p>
+                        <a href="#" class="btn">Order Now</a>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                    <div class="image">
+                        <img src=<%="/img/" + name + "/" + spec.PIC_ID + ".jpg" %> width="500" height="500">
+                    </div>
+                </div>
+                 
+            <% } %>
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <!-- home section ends -->
+
+
+    <!-- dishes section starts -->
+    <section class="dishes" id="dishes">
+        <h3 class="sub-heading"> Our Dishes</h3>
+        <h2 class="heading"> Popular Dishes</h2>
+        <div class="box-container">
+
+ <% for (let burg of regular){ %>
+
+
+            <div class="card">
+                <div class="imgbox">
+                    <img src=<%="/img/" + name+ "/" + burg.PIC_ID+".jpg" %>>
+                </div>
+                <div class="content">
+                    <div class="details">
+                        <h2> <%= burg.FOOD_NAME %><br><span>Tk. <%= burg.PRICE %></span>
+                        </h2>
+                        <div class="data">
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="fas fa-eye"></a>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+
+                        </div>
+                        
+                        <div class="actionButton">
+                            <button>Order Now</button>
+                  <!--       <a href="/add_cart">    <button>Add to Cart</button></a>-->
+                     
+
+ <form action="/add_cart" method="POST">
+                                                        <input type="hidden" name="food_id" value="<%=regular.FOOD_ID%>">
+                                                        <input type="hidden" name="username" value="<%=username%>">
+
+                                                        <button type="submit" class="btn btn-primary">Add to Cart</button>
+                                                    </form>
+
+   </div>
+                    </div>
+                </div>
+            </div>
+
+           
+            <% } %>
+        </div>
+    </section>
+    <!-- dishes section ends -->
+
+
+
+
+
+     custom js file link 
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        let menu = document.querySelector('#menu-bars');
+let navbar = document.querySelector('.navbar');
+
+menu.onclick = () => {
+    menu.classList.toggle('fa-times');
+    navbar.classList.toggle('active');
+}
+
+window.onscroll = () => {
+    menu.classList.remove('fa-times');
+    navbar.classList.remove('active');
+}
+
+document.querySelector('#search-icon').onclick = () => {
+    document.querySelector('#search-form').classList.toggle('active');
+}
+
+document.querySelector('#close').onclick = () => {
+    document.querySelector('#search-form').classList.remove('active');
+}
+
+
+var swiper = new Swiper(".home-slider", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    loop: true,
+});
+
+    </script>
+
+</body>
+
+</html>

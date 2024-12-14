@@ -1,0 +1,55 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+    
+    html,
+    body {
+        display: grid;
+        height: 100%;
+        place-items: center;
+        text-align: center;
+        background: rgb(190, 103, 103);
+    }
+    
+    .container .table-responsive .table tbody tr td .main .d-flex {
+        color: #fff;
+    }
+    
+    .container .table-responsive .table tbody tr td p {
+        color: #fff;
+    }
+    
+    .container .table-responsive .table tbody tr td .c-c button {
+        width: 25px;
+        height: 25px;
+        font-size: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .container .table-responsive .table tbody tr td .c-c button:hover {
+        background-color: #000;
+        color: #fff;
+    }
+    
+    .checkout {
+        margin-top: 70px;
+        align-items: center;
+    }
+    
+    .checkout .proceed-btn {
+        font-size: 15px;
+        font-weight: bold;
+        color: #fff;
+        background: #252525;
+        text-transform: uppercase;
+        padding: 15px 25px 14px 25px;
+        display: block;
+        text-align: center;
+        /* align-items: center; */
+        text-decoration: none;
+        /* margin-left: 10px; */
+    }

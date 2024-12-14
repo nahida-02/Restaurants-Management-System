@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Admin</title>
+</head>
+
+<body>
+    <div class="page_wrape">
+        <input type="checkbox" id="nav-toggle">
+        <div class="side-bar">
+            <div class="logo">
+                <a href="#"><img src="../Images/logo-2.png"></a>
+            </div>
+            <div class="avtar">
+                <div class="avtar-img">
+                    <!-- <i class="fa fa-user" aria-hidden="true" style="width: 20px;height:20px;margin-right:10px;"></i> -->
+                </div>
+                <div class="name-pos">
+                    <h2>Admin</h2>
+                </div>
+            </div>
+            <div class="side-bar-nav">
+                <ul>
+                    <li>
+                        <a href="admin_main.html">
+                            <span><i class="fa fa-home" aria-hidden="true"></i></span>
+                            <span class="nav-link">DashBoard</span>
+
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="">
+                            <span><i class="fa fa-users" aria-hidden="true"></i></span>
+                            <span class="nav-link">Users <span>&rsaquo;</span></span>
+
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="admin_show_admin.html">Admin</a>
+                            </li>
+                            <li>
+                                <a href="admin_show_customers.html">Customer</a>
+                            </li>
+                            <li>
+                                <a href="admin_show_deliveryman.html">Delivery Man</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="admin_main_restaurants.html">
+                            <span><i class="fa fa-bars" aria-hidden="true"></i></span>
+                            <span class="nav-link">Restaurants</span>
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="admin_main_add_products.html">
+                            <span><i class="fa fa-cart-plus" aria-hidden="true"></i></span>
+                            <span class="nav-link">Add Products</span>
+
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="admin_order.html">
+                            <span><i class="fa fa-cutlery" aria-hidden="true"></i></span>
+                            <span class="nav-link">Orders<span>&rsaquo;</span></span>
+                        </a>
+                        <ul>
+
+                            <li>
+                                <a href="current_offer.html">Burgerology</a>
+                            </li>
+                            <li>
+                                <a href="admin_create_offer.html">Candle café</a>
+                            </li>
+                            <li>
+                                <a href="admin_create_offer.html">Chinese Mystic</a>
+                            </li>
+                            <li>
+                                <a href="admin_create_offer.html">Candle café</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="">
+                            <span><i class="fa fa-object-ungroup" aria-hidden="true"></i></span>
+                            <span class="nav-link">Offers<span>&rsaquo;</span></span>
+
+                        </a>
+                        <ul>
+
+                            <li>
+                                <a href="current_offer.html">Burgerology</a>
+                            </li>
+                            <li>
+                                <a href="admin_create_offer.html">Candle café</a>
+                            </li>
+                            <li>
+                                <a href="admin_create_offer.html">Chinese Mystic</a>
+                            </li>
+                            <li>
+                                <a href="admin_create_offer.html">Steak-N-Dine</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="">
+                            <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
+                            <span class="nav-link">Table-Booking<span>&rsaquo;</span></span>
+
+                        </a>
+                        <ul>
+
+                            <li>
+                                <a href="current_offer.html">Burgerology</a>
+                            </li>
+                            <li>
+                                <a href="admin_create_offer.html">Candle café</a>
+                            </li>
+                            <li>
+                                <a href="admin_create_offer.html">Chinese Mystic</a>
+                            </li>
+                            <li>
+                                <a href="admin_create_offer.html">Steak-N-Dine</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="transactions.html">
+                            <span><i class="fa fa-usd" aria-hidden="true"></i></span>
+                            <span class="nav-link">Transactions</span>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../login.html">
+                            <span><i class="fa fa-sign-out" aria-hidden="true"></i>
+                        </span>
+                            <span class="nav-link">Log Out</span>
+
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            
+        </div>
+
+        <!-- Header starts -->
+        <header>
+            <div class="head_inner">
+                <div class="right-part">
+                    <form>
+                        <input type="text" placeholder="Search here..." required="">
+                        <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </form>
+                </div>
+                <div class="left-part">
+                    <ul>
+                        <li>
+                            <div class="profile">
+                                <div class="avtar-img">
+                                    <span><a href="admin_profile.html"><i class="fa fa-user" aria-hidden="true"></i></a></span>
+                                </div>
+                                <div class="avtar-name">
+                                    <h3>Admin</h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="nav-toggle"><span class="bar"><i class=" fa fa-bars " aria-hidden="true "></i></span></label>
+                        </li>
+                        <li>
+                            <!-- <label for="nav-toggle"><span class="bar"><i class=" fa fa-bars " aria-hidden="true "></i></span></label> -->
+                            <span><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- main content -->
+        <div class="main-content ">
+            <div class="info-card ">
+                <div class="card ">
+                    <div class="card-icon ">
+                        <span><i class="fa fa-database " aria-hidden="true "></i></span>
+                    </div>
+                    <div class="card-detail ">
+                        <h4>Total Products</h4>
+                        <h2>80</h2>
+                    </div>
+                    <p>Increased by 60%</p>
+                </div>
+                <div class="card ">
+                    <div class="card-icon ">
+                        <span><i class="fa fa-shopping-basket " aria-hidden="true "></i></span>
+                    </div>
+                    <div class="card-detail ">
+                        <h4>Total Orders</h4>
+                        <h2>20</h2>
+                    </div>
+                    <p>Increased by 40%</p>
+                </div>
+                <div class="card ">
+                    <div class="card-icon ">
+                        <span><i class="fa fa-cog " aria-hidden="true "></i></span>
+                    </div>
+                    <div class="card-detail ">
+                        <h4>Total Deliveries</h4>
+                        <h2>24</h2>
+                    </div>
+                    <p>Increased by 60%</p>
+                </div>
+            </div>
+            <div class="main-table "></div>
+        </div>
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>

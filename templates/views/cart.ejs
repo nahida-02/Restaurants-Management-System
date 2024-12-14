@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/cart.css">
+
+
+    <script src="https://kit.fontawesome.com/4bf265f533.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>name</h1>
+        <img src="/img/logo.png" style="width:100px;height:30px;">
+        <h2 style="color: rgb(255, 255, 255);">Your Cart</h2>
+        <!-- // <i class="fa fa-user-o" aria-hidden="true"></i> -->
+    </header>
+    <section class="mt-5">
+        <div class="container ">
+            <div class="table-responsive ">
+                <table class="table ">
+                    <thead class="thead-dark ">
+                        <tr>
+                            <th scope="col " class="text-black">Product Name</th>
+                            <th scope="col " class="text-black">Per Unit Price</th>
+                            <th scope="col " class="text-black">Quantity</th>
+                            <th scope="col " class="text-black">Price</th>
+                            <th scope="col " class="text-black">Increase</th>
+                            <th scope="col " class="text-black">Decrease</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                     
+ <% for (let p of foods){ %>
+
+                        <tr>
+                            <td>
+                                <div class="main">
+                                    <div class="d-flex">
+                                        <p><%= p.FOOD_NAME %></p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <h6><%= p.PRICE %> Tk</h6>
+                            </td>
+
+                            <td>
+                                <!-- <div class="counter">
+                                    <i class="fa fa-angle-down" aria-hidden="true" onclick="decrement()">
+                                        
+                                    </i>
+                                    <input class="input-number" type="text" value="1" min="0" max="100" id="root">
+                                <p id="root">1</p>
+                                <i class="fa fa-angle-up" aria-hidden="true" onclick="increment()"></i>
+            </div> -->
+                                <p id="root1"><%= p.qty %></p>
+                            </td>
+                            <td>
+                                <h6><%= p.pay %> Tk</h6>
+                            </td>
+                            <td>
+                                <div class="c-c">
+                                 <a href=<%="/add_cart/increase/" + p.FOOD_ID + "/" + name %>>      <button >+</button></a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="c-c">
+                                   
+                                    
+                                 <a href=<%="/add_cart/decrease/" + p.FOOD_ID + "/" + name %>>      <button >-</button></a>
+                                </div>
+                            </td>
+
+                             <td>
+                                <div class="c-c">
+                             <a href=<%="/add_cart/delete/" + p.FOOD_ID + "/" + name %>>      <button >X</button></a>
+                                </div>
+                            </td>
+                        </tr>
+
+
+    <% } %>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </section>
+    <div class="col-lg-4 offset-lg-4">
+        <div class="checkout">
+            <ul>
+                <!--   -->
+                <li class="cart-total">Total <span><%=total%> Tk</span>
+                </li>
+            </ul>
+            <a class="proceed-btn" href=<%="/checkout/" + name %> >Proceed to Checkout</a>
+        </div>
+    </div>
+
+
+
+
+    <script>
+       
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/admin1.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .main-content table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        th {
+            color: rgb(229, 201, 201);
+            background-color: rgb(125, 62, 62);
+            font-size: 18px;
+        }
+        
+        td {
+            font-size: 15px;
+        }
+        
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: rgb(206, 135, 130);
+            color: rgb(0, 0, 0);
+        }
+        
+        tr:nth-child(odd) {
+            background-color: rgb(174, 101, 101);
+            color: rgb(0, 0, 0);
+        }
+        
+        tr a:nth-child(even) {
+            background-color: rgb(219, 131, 131);
+            color: black;
+        }
+        
+        tr a:nth-child(odd) {
+            background-color: black;
+            color: white;
+        }
+        
+        .fa-eye {
+            background: rgb(103, 86, 85);
+        }
+        
+        .fa-commenting {
+            background: rgb(103, 86, 85);
+        }
+        
+        .pending td .approve {
+            background-color: green;
+            color: white;
+            border: none;
+            outline: none;
+            text-align: center;
+            margin: 2px;
+            padding: 5px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        
+        .pending td .decline {
+            background-color: rgb(148, 26, 26);
+            color: white;
+            font-size: 13px;
+            border: none;
+            outline: none;
+            text-align: center;
+            margin: 2px;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        
+        .pending button {
+            letter-spacing: 1px;
+            margin: 30px 0px;
+            padding: 10px 20px;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.2rem;
+            font-weight: 400;
+            background-color: rgb(148, 26, 26);
+            color: white;
+            padding: 10px 20px;
+            margin-left: 500px;
+            margin-top: 10px;
+            border: none;
+        }
+        
+        .approved button {
+            letter-spacing: 1px;
+            margin: 30px 0px;
+            padding: 10px 20px;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.2rem;
+            font-weight: 400;
+            background-color: green;
+            color: white;
+            margin-left: 500px;
+            margin-top: 34px;
+            border: none;
+        }
+    </style>
+    <title>Admin</title>
+</head>
+
+<body>
+    <div class="page_wrape">
+        <input type="checkbox" id="nav-toggle">
+
+           
+ <%- include('../partials/sidebar.ejs') %>
+        <!-- Header starts -->
+           <%- include('../partials/header.ejs') %>
+
+
+        <!-- main content -->
+        <div class="main-content ">
+            <div class="pending">
+                <button>Pending</button>
+                <table style="width:100% ">
+                    <tr><th>Booking Id</th>
+                        <th>Customer ID</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>How Many People</th>
+                        <th>Restaurant</th>
+                        <th>Approve</th>
+                        <th>Decline</th>
+                       
+
+                    </tr>
+                     <% for (let wait of waiting){ %>
+                    <tr>
+                        <td><%= wait.BOOKING_ID %></td>
+                        <td><%= wait.CUSTOMER_ID %></td>
+                        <td><%= wait.BOOKDATE %></td>
+                        <td><%= wait.BOOKTIME %></td>
+                        <td><%= wait.PERSONS %></td>
+                        <td><%= wait.REST_NAME%></td>
+                        <td>
+                         <a href=<%="/table/approved/" + wait.BOOKING_ID %>>  <button class="approve"> Approved </button></a>
+                        </td>
+                        <td> <a href=<%="/table/declined/" + wait.BOOKING_ID %>><button class="decline">Declined</button></a></td>
+                        
+                    </tr>
+                   
+<% } %>
+                </table>
+            </div>
+
+<br><br><br>
+            <div class="approved">
+                <button>Approved</button>
+                <table style="width:100% ">
+                    
+                   <tr><th>Reservation Id</th>
+                        <th>Customer ID</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>How Many People</th>
+                        <th>Restaurant</th>
+                        
+                    </tr>
+                      <% for (let wait of approve){ %>
+                    <tr>
+                       <td><%= wait.RESERVE_ID %></td>
+                        <td><%= wait.CUSTOMER_ID %></td>
+                        <td><%= wait.BOOKDATE %></td>
+                        <td><%= wait.BOOKTIME %></td>
+                        <td><%= wait.REST_NAME %></td>
+                        <td><%= wait.PERSONS %></td>
+                    </tr>
+                  <% } %>
+
+                </table>
+
+
+                <br><br><br><br>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+</body>
+
+</html>

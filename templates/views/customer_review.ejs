@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <script src="https://kit.fontawesome.com/4bf265f533.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/rating1.css">
+    <style>
+        .table {
+            padding-left: 150px;
+        }
+        
+        .table table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 90%;
+        }
+        
+        th {
+            color: rgb(229, 201, 201);
+            background-color: rgb(125, 62, 62);
+            font-size: 18px;
+        }
+        
+        td {
+            font-size: 21px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: 500;
+        }
+        
+        td,
+        th {
+            border: 1px solid #450505;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: rgb(243, 235, 234);
+            color: rgb(0, 0, 0);
+        }
+        
+        tr:nth-child(odd) {
+            background-color: rgb(253, 185, 185);
+            color: rgb(0, 0, 0);
+        }
+        
+        input {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            width: 60%;
+            padding: 20px 60px;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            background-color: rgb(222, 213, 213);
+            border-radius: 40px;
+        }
+        
+        input::placeholder {
+            color: rgb(156, 145, 145);
+            font-weight: 500;
+        }
+        
+        button {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            width: 60%;
+            padding: 6px;
+            font-size: 20px;
+            color: #fff;
+            background-color: rgb(165, 75, 75);
+            border: none;
+            outline: none;
+            /*border-radius: 40px;*/
+            cursor: pointer;
+        }
+        
+        button:hover {
+            color: #fff;
+            background-color: black;
+        }
+        
+        .checkout {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .checkout a {
+            padding: 15px 45px 15px 45px;
+            border: none;
+            outline: none;
+            font-size: 20px;
+            font-weight: 500;
+            background: rgb(107, 38, 38);
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+        }
+        
+        .checkout a:hover {
+            background: rgb(0, 0, 0);
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="#"><i class="fa fa-arrow-circle-left" aria-hidden="true" style="color: black;font-size: 30px;margin-bottom:4px ;"></i></a>
+        <h1 style="width:150px;height: 50px;color:white;">Burgerology</h1>
+        <img src="/img/logo.png" style="width:120px;height: 30px;">
+        <h2 style="color:white;text-align:center;">Reviews</h2>
+    </header>
+    <p style="color:rgb(66, 12, 12);font-size:large;font-weight:800; text-align:center;font-size:23px;padding:30px;">Do you like our foods? <span style="color: rgb(255, 255, 255);">Please Give Reviews</span> </p>
+    <!-- // <i class="fa fa-user-o" aria-hidden="true"></i> -->
+    <section class="table">
+        <table>
+            <tr>
+                <th>Food Name</th>
+                <th>Reviews</th>
+                <th>Action</th>
+            </tr>
+
+
+  <% for (let it of item){ %>
+            <tr>
+                <td><%= it.foodname %></td>
+                 <form method="post" action=<%="/review/" + name %>>
+                <td>
+                   
+                        <input type="hidden" name="foodid" value="<%=it.foodid%>">
+                         <input type="hidden" name="foodname" value="<%=it.foodname%>">
+                        <input type="hidden" name="name" value="<%=name%>">
+                        <input type="text" name='text' placeholder="review">
+
+                  
+                </td>
+                <td>
+                <button type="submit">Save</button></a>
+                </td>
+                </form>
+            </tr>
+             <% } %>
+
+        </table>
+        <div class="col-lg-4 offset-lg-4" style="padding-top: 40px;align-items:center;">
+            <div class="checkout">
+                 <a class="proceed-btn" href=<%="/review/save/" +name %>>  >Done</a>
+                <!-- <a href="#" class="skip-btn">Skip</a> -->
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

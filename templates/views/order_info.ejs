@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Order Info</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="order.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+header{
+   background: #f2bc94;
+   display: flex;
+}
+.imge{
+    margin-right: auto;
+}
+.imge h1{
+    width: 100px;
+    height: 50px;
+    font-weight: bolder;
+    color: #722620;
+}
+.imge img{
+    width: 180px;
+    height: 50px;
+}
+header h2{
+    margin-top: 140px;
+    margin-right: 700px;
+    font-weight: bold;
+    font-family: Georgia, serif;
+    color: #722620;
+}
+        .main-content .filter{
+            width: 20%;
+            float: right;
+        }
+        .main-content .filter .btn{
+            font-family: "Roboto",sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            background: rgb(96, 59, 59);
+            color: white;
+            /*width: 65px;*/
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+             -webkit-transition-duration: 0.3s;
+             transition-duration: 0.3s;
+              -webkit-transition-property: box-shadow,transform;
+              transition-property: box-shadow,transform;
+
+        }
+
+        .main-content .filter .btn:hover,.main-content .filter .btn:focus,.main-content .filter .btn:active{
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+
+        .main-content .filter input{
+            width: 200px;
+            height: 30px;
+            font-size: 18px;
+        }
+
+        .main-content .filter2{
+            width: 33.33%;
+            /*float: right;*/
+        }
+        .main-content .filter2 .btn{
+            font-family: "Roboto",sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            background: rgb(96, 59, 59);
+            color: white;
+            /*width: 65px;*/
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+             -webkit-transition-duration: 0.3s;
+             transition-duration: 0.3s;
+              -webkit-transition-property: box-shadow,transform;
+              transition-property: box-shadow,transform;
+
+        }
+
+        .main-content .filter2 .btn:hover,.main-content .filter2 .btn:focus,.main-content .filter2 .btn:active{
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+
+        .main-content .filter2 input{
+            width: 200px;
+            height: 30px;
+            font-size: 18px;
+        }
+
+        
+
+        .row{
+            margin: 20px 0;
+            align-items: center;
+           /* border-left: 10px solid #fff;
+*/
+        }
+        .column{
+            display: table-cell;
+            padding: 10px;
+            width: 50%;
+            text-align: center;
+            vertical-align: middle;
+            border-left: 10px solid #fff;
+            border-right: 10px solid #fff;
+
+        }
+        h2{
+           font-family: Georgia, serif; 
+        }
+
+        table{
+            background: #4b1223;
+            width: 690px;
+            box-shadow: -1px 12px 12px -6px rgba(0, 0, 0, 0.5);
+            color: #f2bc94;
+
+        }
+        table,td,th{
+            padding: 20px;
+            border: 0.5px solid #f2bc94;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        td{
+            font-size: 17px;
+        }
+        th{
+            font-size: 18px;
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <header>
+       <div class="imge">
+        <h1 style="font-family: Georgia, serif;">Burgerology</h1>
+        <img src="/img/logo-2.png">
+       </div>
+        <h2>Past Orders</h2>  
+    </header>
+
+  
+
+    <div class="main-content ">
+           <!-- <div class="filter">
+                <input type="text" name="Payment" placeholder="Payment Method">
+            <a href="#" class="btn">Filter</a>
+           </div> -->
+
+           <!-- <div class="filter2">
+                <input type="email" name="Email" placeholder="Email..">
+            <a href="#" class="btn">Filter</a>
+           </div> -->
+         
+          <br>
+          <br>
+
+<% for (let f of final){ %>
+          <div class="row">
+              
+              <div class="column">
+                   <table>
+                    <tr style="text-align: center;"><h2>Cart</h2></tr>
+
+ 
+                    <tr>
+                        <th>Food Name</th>
+                          <th>Quantity</th>
+                          <th>Price Per Quantity</th>
+                          <th>Price</th>
+                    </tr>
+                     
+                      <% for (let food of f.cat){ %>
+                      <tr>
+                          <td> <%= food.foodname %></td>
+                          <td> <%= food.quantity %></td>
+                          <td>Tk. <%= food.price %></td>
+                           <td>Tk. <%= food.fprice %></td>
+                      </tr>
+                       <% } %>
+                    
+                      <tr>
+                          <td>Total</td>
+                          <td><%= f.tqt %></td>
+                          <td></td>
+                          <td><%= f.total %> Tk</td>
+                      </tr>
+                       
+                      
+                  </table>
+              </div>
+              <div class="column">
+                   <table>
+                     <tr style="text-align: center;"><h2>Payment</h2></tr>
+                      <tr>
+                          <th>Payment Method</th>
+                          <td><%= f.payment %></td>
+                      </tr>
+                      
+                      <tr>
+                          <th>Order ID</th>
+                          <td><%= f.orderid %></td>
+                      </tr>
+                      <tr>
+                          <th>Date</th>
+                          <td><%= f.date %></td>
+                      </tr>
+                  </table>
+              </div>
+          </div>
+
+   <% } %>
+
+    
+</body>
+</html>

@@ -1,0 +1,74 @@
+.sub-heading{
+   text-align: center;
+   color: brown;
+   font-size: 2rem;
+   padding-top: 1rem;
+}
+
+.heading{
+   text-align: center;
+   color: rosybrown;
+   font-size: 3rem;
+   padding: 2rem;
+   text-transform: uppercase;
+}
+
+.main-content .dishes .box-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit,minmax(26rem,1fr));
+   gap: 1rem;
+}
+.main-content .dishes .box-container .box{
+   padding: 2rem;
+   background: #fff;
+   border-radius: 1rem;
+   border: 1rem solid rgba(0, 0, 0, 0.2);
+   box-shadow: black;
+   position: relative;
+   overflow: hidden;
+   text-align: center;
+}
+.main-content .dishes .box-container .box img{
+   width: 250px;
+   height:250px;
+   margin: 1rem 0;
+}
+.main-content .dishes .box-container .box h3{
+   color: black;
+   font-size: 1.5rem;
+}
+
+.main-content .dishes .box-container .box span{
+   color: brown;
+   font-weight: bolder;
+   margin-right:1rem;
+   font-size: 1.7rem;
+}
+
+
+.main-content .dishes .box-container  .actionButton {
+                       display: flex;
+                       align-items: center;
+                      justify-content: center;
+                      padding: 10px;
+                      margin-left: 10px ;
+
+                }
+                                                                                                                     
+.main-content .dishes .box-container  .actionButton  button {
+                                              padding: 10px;
+                                              border-radius: 5px;
+                                              border: none;
+                                              outline: none;
+                                              font-size: 1.3em;
+                                              background: #7a2c2d;
+                                              color: #fff;
+                                              cursor: pointer;
+                                       }
+                                                                                                                                                
+.main-content .dishes .box-container  .actionButton  button:nth-child(2) {
+   margin-left:10px ;
+                                              padding: 10px;
+                                              color: rgb(255, 255, 255);
+                                              background: rgb(0, 0, 0);
+                              }

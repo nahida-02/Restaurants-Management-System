@@ -1,0 +1,18 @@
+ <% for (let burg of burger){ %>
+            <div class="card">
+                <div class="imgbox">
+                    <img src=<%="/img/"+burg.PIC_ID+".jpg" %>>
+                </div>
+                <div class="content">
+                    <div class="details">
+                        <h2> <%= burg.FOOD_NAME %><br><span>Tk. <%= burg.PRICE %></span>
+                        </h2>
+                        
+                        </div>
+                        <div class="actionButton">
+                            <button>Order Now</button>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+  <% } %>

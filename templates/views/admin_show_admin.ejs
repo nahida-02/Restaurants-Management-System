@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/admin1.css">
+    <style>
+        .main-content  table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: rosybrown;
+  color: black;
+}
+tr:nth-child(odd){
+    background-color: rgb(179, 143, 188);
+    color: black;
+}
+    </style>
+    <title>Admin</title>
+</head>
+
+<body>
+    <div class="page_wrape">
+        <input type="checkbox" id="nav-toggle">
+    
+     <%- include('../partials/sidebar.ejs') %>
+        <!-- Header starts -->
+        <%- include('../partials/header.ejs') %>
+
+        <!-- main content -->
+        <div class="main-content ">
+          <h2 style="text-align: center;">Admin</h2>
+          <table style="width:100%">
+                <tr>
+                  <th>Full Name</th>
+                  <th>Username</th>
+                  <th>Address</th>
+                  <th>Email Address</th>
+                  <th>Join Date</th>
+                </tr>
+ <% for (let c of admins){ %>
+                <tr>
+                  <td> <%= c.NAME %></td>
+                  <td><%= c.USERNAME %></td>
+                  <td><%= c.ADDRESS %></td>
+                  <td><%= c.EMAIL %></td>
+                  <td><%= c.JOIN_DATE %></td>
+
+                </tr>
+                 
+            <% } %>
+
+
+              </table>
+           
+        </div>
+
+
+    </div>
+
+
+
+</body>
+
+</html>

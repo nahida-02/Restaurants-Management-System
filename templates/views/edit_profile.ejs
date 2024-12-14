@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"  rel="stylesheet">
+	<title>Edit Profile</title>
+	<style>
+		body{
+			background: black
+			}
+			.form-control:focus{
+				box-shadow: none;
+				border-color: #BA68C8
+				}
+				.profile-button{
+					background: rgb(99, 39, 120);
+					box-shadow: none;
+					border: none
+					}
+					.profile-button:hover{
+						background: #682773
+						}
+						.profile-button:focus{
+							background: #682773;
+							box-shadow: none
+							}
+							.profile-button:active{
+								background: #682773;
+								box-shadow: none
+								}
+								.back:hover{
+									color: #682773;
+									cursor: pointer
+									}
+									.labels{
+										font-size: 11px
+										}
+										.add-experience:hover{
+											background: #BA68C8;
+											color: #fff;
+											cursor: pointer;
+											border: solid 1px #BA68C8
+										}
+										span {
+											position: absolute;
+											right: 20px;
+											transform: translate(0,-50%);
+											top: 45px;
+											cursor: pointer;
+										}
+										
+	</style>
+</head>
+<body>
+	<img src="/img/logo.png">
+<div class="container rounded bg-white mt-5 mb-3"> 
+	<div class="row">
+	 <div class="col-md-3 align-items-center border-right"> 
+	 	<div class="d-flex flex-column align-items-center text-center p-3 py-5">
+	 		<i class="fas fa-user-tie fa-7x mt-5"></i>
+	 		<p class="font-weight-bold">Admin Name</p>
+	 		<p class="text-black-50">Admin</p>
+	 		<!-- <span> </span> -->
+	 	</div> 
+	 </div>
+	  <div class="col-md-5 border-right">
+	   <div class="p-3 py-5"> 
+	   	<div class="d-flex justify-content-between align-items-center mb-3">
+	   	 <h3 class="text-right">Profile Settings</h4>
+	   	  </div>
+	   	   <div class="row mt-2">
+	   	    <div class="col-md-12">
+	   	    	<!-- <label class="labels">Full Name</label> -->
+	   	    	<h6 class="font-weight-bold">Full Name</h6>
+	   	    	<input type="text" class="form-control" placeholder="type your full name" value="Mehreen Tabassum Maliha">
+	   	    </div> 
+	   	    <div class="col-md-12">
+	   	    	
+	   	    	<h6 class="font-weight-bold">Username</h6>
+	   	    	<input type="text" class="form-control" placeholder="type your username" value="Mehreen">
+	   	    </div> 
+	   	    <div class="col-md-12">
+	   	    	
+	   	    	<h6 class="font-weight-bold">Joining Date</h6>
+	   	    	<input type="text" class="form-control" placeholder="joining date" value="22/06/2022">
+	   	    </div>
+	   	    <!-- <div class="col-md-6">
+	   	    	<label class="labels">Surname</label>
+	   	    	<input type="text" class="form-control" value="" placeholder="">
+	   	    </div>  -->
+	   	</div>
+	   	 <div class="row mt-3">
+	   	  <div class="col-md-12">
+	   	  	<h6 class="font-weight-bold">Phone Number</h6>
+	   	  	<input type="text" class="form-control" placeholder="enter your phone number" value="132435467688">
+	   	  </div> 
+	   	  <div class="col-md-12">
+	   	  	<h6 class="font-weight-bold">Address</h6>
+	   	  	<input type="text" class="form-control" placeholder="enter your address" value="Dhaka">
+	   	  </div>
+	   	   <div class="col-md-12">
+	   	   	<h6 class="font-weight-bold">Email Address</h6>
+	   	   	<input type="text" class="form-control" placeholder="enter email id" value="maliha@gmail.com">
+	   	   </div> 
+	   	   <div class="col-md-12">
+	   	   	<h6 class="font-weight-bold">Password</h6>
+	   	   	<input type="password" class="form-control" placeholder="enter your password" value="132354657" id="password">
+	   	   	<span><i class="fa fa-eye" aria-hidden="true" id="eye" onclick="toggle()"></i></span>
+	   	   </div>
+	   	   <div class="col-md-12">
+	   	   	<h6 class="font-weight-bold">Confirm Password</h6>
+	   	   	<input type="password" class="form-control" placeholder="confirm password" value="132354657" id="pass">
+	   	   <!-- 	<span><i class="fa fa-eye" aria-hidden="true" id="eye2" onclick="toggle()"></i></span> -->
+	   	   </div>
+
+	   	    </div>
+	   	     <!-- <div class="row mt-3">
+	   	      <div class="col-md-6">
+	   	      	<label class="labels">Country</label>
+	   	      	<input type="text" class="form-control" placeholder="country" value="">
+	   	      </div> 
+	   	      <div class="col-md-6">
+	   	      	<label class="labels">State/Region</label>
+	   	      	<input type="text" class="form-control" value="" placeholder="state">
+	   	      </div> 
+	   	  </div>  -->
+	   	  <div class="mt-5 text-center">
+	   	  	<button class="btn btn-dark profile-button" type="button">Save Profile</button>
+	   	  </div> 
+	   	</div>
+	   	 </div>
+	   	  <!-- <div class="col-md-4"> <div class="p-3 py-5"> <div class="d-flex justify-content-between align-items-center experience"><span>Edit Experience</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Experience</span></div><br> <div class="col-md-12"><label class="labels">Experience in Designing</label><input type="text" class="form-control" placeholder="experience" value=""></div> <br> <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" class="form-control" placeholder="additional details" value=""></div> </div> </div> --> 
+	   	</div>
+</div>
+</div>
+</div>
+
+
+
+<script>
+	var state = false;
+	function toggle() {
+		if(state){
+			document.getElementById("password").setAttribute("type","password");
+			document.getElementById("eye").style.color='#80471C';
+			state = false;
+		}
+		else{
+			document.getElementById("password").setAttribute("type","text");
+			document.getElementById("eye").style.color='#947B4F';
+			state = true;
+		}
+
+	}
+</script>
+</body>
+</html>

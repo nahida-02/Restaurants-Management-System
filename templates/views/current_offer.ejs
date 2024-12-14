@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/admin1.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Admin</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+        }
+        
+        th {
+            color: rgb(229, 201, 201);
+            background-color: rgb(125, 62, 62);
+            font-size: 18px;
+        }
+        
+        td {
+            font-size: 15px;
+        }
+        
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: rgb(206, 135, 130);
+            color: rgb(0, 0, 0);
+        }
+        
+        tr:nth-child(odd) {
+            background-color: rgb(174, 101, 101);
+            color: rgb(0, 0, 0);
+        }
+        
+        td a {
+            background-color: black;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="page_wrape">
+        <input type="checkbox" id="nav-toggle">
+      <%- include('../partials/sidebar.ejs') %>
+      <!-- Header starts -->
+       <%- include('../partials/header.ejs') %>
+    
+
+
+        <!-- main content -->
+        <div class="main-content ">
+            <h2 style="text-align: left;margin-bottom: 30px;">Current Offers</h2>
+
+            <div class="menu_offer" style="padding-top: 25px;">
+                <div class="name_1">
+                    <h1 style="text-align: center;padding-bottom:12px;">Burgerology</h1>
+                </div>
+                <table style="width:100%">
+                    <tr>
+                        <th>Food Name</th>
+
+                        <th>Offer</th>
+                        <th>Previous Price</th>
+                        <!-- <th>Discounted Price</th> -->
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>End Offer</th>
+                    </tr>
+
+ <% for (let p of menu1){ %>
+
+
+                    <tr>
+                        <td><%= p.FOOD_NAME %></td>
+
+                        <td><%= p.OFFER_PERCENT %> %</td>
+                        <td><%= p.PRICE %> Tk</td>
+                        <!-- <td>90Tk</td> -->
+                        <td><%= p.DATE_ACTIVE_FROM %></td>
+                        <td><%= p.DATE_ACTIVE_TO %></td>
+                        <td><a href=<%="/products/deleteoffer/" + p.OFFER_ID %>>   <i class="fa fa-window-close" aria-hidden="true"></i></a></td>
+                    </tr> <% } %>
+
+
+                   
+                   
+                    
+                   
+                </table>
+            </div>
+
+
+
+
+
+
+
+
+            <div class="menu_offer" style="padding-top: 25px;">
+                <div class="name_1">
+                    <h1 style="text-align: center;padding-bottom:12px;">Candle café</h1>
+                </div>
+                <table style="width:100%">
+                    <tr>
+                        <th>Food Name</th>
+
+                        <th>Offer</th>
+                        <th>Previous Price</th>
+                        <!-- <th>Discounted Price</th> -->
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>End Offer</th>
+                    </tr>
+
+                     <% for (let p of menu2){ %>
+                   <tr>
+                        <td><%= p.FOOD_NAME %></td>
+
+                        <td><%= p.OFFER_PERCENT %> %</td>
+                        <td><%= p.PRICE %> Tk</td>
+                        <!-- <td>90Tk</td> -->
+                        <td><%= p.DATE_ACTIVE_FROM %></td>
+                        <td><%= p.DATE_ACTIVE_TO %></td>
+                        <td><a href=<%="/products/deleteoffer/" + p.OFFER_ID %>>   <i class="fa fa-window-close" aria-hidden="true"></i></a></td>
+                    </tr> <% } %>
+                   
+                    
+                   
+                   
+                </table>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="menu_offer" style="padding-top: 25px;">
+                <div class="name_1">
+                    <h1 style="text-align: center;padding-bottom:12px;">Chinese Mystic</h1>
+                </div>
+                <table style="width:100%">
+                    <tr>
+                        <th>Food Name</th>
+
+                        <th>Offer</th>
+                        <th>Previous Price</th>
+                        <!-- <th>Discounted Price</th> -->
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>End Offer</th>
+                    </tr>
+
+                     <% for (let p of menu3){ %>
+                    <tr>
+                        <td><%= p.FOOD_NAME %></td>
+
+                        <td><%= p.OFFER_PERCENT %> %</td>
+                        <td><%= p.PRICE %> Tk</td>
+                        <!-- <td>90Tk</td> -->
+                        <td><%= p.DATE_ACTIVE_FROM %></td>
+                        <td><%= p.DATE_ACTIVE_TO %></td>
+                        <td><a href=<%="/products/deleteoffer/" + p.OFFER_ID %>>   <i class="fa fa-window-close" aria-hidden="true"></i></a></td>
+                    </tr> <% } %>
+                   
+                 
+                   
+                    
+                </table>
+            </div>
+
+
+
+
+            <div class="menu_offer" style="padding-top: 25px;">
+                <div class="name_1">
+                    <h1 style="text-align: center;padding-bottom:12px;">Steak-N-Dine</h1>
+                </div>
+                <table style="width:100%">
+                    <tr>
+                        <th>Food Name</th>
+
+                        <th>Offer</th>
+                        <th>Previous Price</th>
+                        <!-- <th>Discounted Price</th> -->
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>End Offer</th>
+                    </tr>
+
+                     <% for (let p of menu4){ %>
+                    <tr>
+                        <td><%= p.FOOD_NAME %></td>
+
+                        <td><%= p.OFFER_PERCENT %> %</td>
+                        <td><%= p.PRICE %> Tk</td>
+                        <!-- <td>90Tk</td> -->
+                        <td><%= p.DATE_ACTIVE_FROM %></td>
+                        <td><%= p.DATE_ACTIVE_TO %></td>
+                         <td><a href=<%="/products/deleteoffer/" + p.OFFER_ID %>>   <i class="fa fa-window-close" aria-hidden="true"></i></a></td>
+                    </tr> <% } %>
+                   
+                  
+                    
+                   
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>

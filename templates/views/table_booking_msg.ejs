@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,intial_scale=1.0">
+    <link rel="stylesheet" href="/css/review.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Table Booking Messages</title>
+</head>
+
+<body>
+    <!-- <a href="menu_burger.html"><i class="fa fa-arrow-circle-left" aria-hidden="true" style="color: black;font-size: 30px;margin-bottom:4px ;"></i></a> -->
+    <h1 style="width:150px;height: 50px;">Burgerology</h1>
+    <img src="/img/logo-2.png" style="width:120px;height: 30px;">
+
+    <section id="testimonials">
+        <!-- heading -->
+        <div class="testimonial-heading">
+            <span>Admin Says</span>
+        </div>
+
+        <!-- testimonial box container -->
+        <div class="testimonials-box-container">
+
+    <% for (let m of msg){ %>
+
+            <div class="testimonial-box">
+                <div class="box-top">
+                    <div class="box-profile">
+                        <div class="profile-img">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                        </div>
+                        <div class="name-user">
+                            <strong>Admin</strong>
+                            <span>Date: <%= m.MSG_TIME %></span>
+                        </div>
+                    </div>
+                    <div class="review">
+                        <!-- <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i> -->
+                        <p>Booking ID: <%= m.MSGID %></p>
+                        <br>
+                        <!-- <span style="background-color: #095d22;color: #ffffff;">Approved</span> -->
+                    </div>
+                </div>
+
+
+                <!-- comments -->
+                <div class="comments">
+                    <p> <%= m.TEXT %></p>
+                </div>
+            </div>
+
+
+
+ <% } %>
+
+           
+            
+
+
+
+           
+
+
+
+
+
+
+
+
+        </div>
+
+
+    </section>
+
+</body>
+
+</html>

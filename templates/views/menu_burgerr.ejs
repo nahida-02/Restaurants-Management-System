@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burgerology</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <!-- font awesome cdn link -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <!-- custom css file link -->
+
+    <link rel="stylesheet" href="/css/menu1.css">
+    <link rel="stylesheet" href="/css/review.css">
+    <link rel="stylesheet" href="/css/offers.css">
+    <style>
+        del {
+            text-decoration: line-through;
+        }
+    </style>
+
+    <!-- Nunito link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="/img/burger-4.png" sizes="16x16">
+</head>
+
+<body>
+
+
+
+    <!-- header section starts -->-->
+
+    <div class=" banner ">
+        <div class="slider ">
+            <img src="/img/1.jpg " id="slideImg">
+        </div>
+        <div class="overlay ">
+            <div class="nabar ">
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <a href="#" class="logo"><i class="fas fa-utensils" style="color: #fff;">
+        </i>Burgerology</a>
+        <nav class="navbar">
+            <a class="active" href="#home">Home</a>
+            <a href="#dishes">Dishes</a>
+            <a href="#order">Order</a>
+            <a href="#table">Table Booking</a>
+            <a href="#offer">Offers</a>
+            <a href="#testimonials">Reviews</a>
+            <a href="/logout">Logout</a>
+        </nav>
+
+
+        <div class="icons">
+            <!-- <i class="fas fa-user" id="users" onclick="menuToggle()"></i> -->
+         <!---->  
+            <a href="customer_profile.html"   class="fas fa-user"></a>
+            
+            <i class="fas fa-bars" id="menu-bars"></i>
+
+            <i class="fas fa-search" id="search-icon"></i>
+            <a href="#" class="fas fa-heart"></a>
+            <a href="/add_cart/show_cart" class="fas fa-shopping-cart"></a>
+            <i class="fa fa-commenting" aria-hidden="true" onclick="menuToggle()"></i>
+        </div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="order_msg.html">Order</a>
+                </li>
+                <li>
+                    <a href="table_booking_msg.html">table Booking</a>
+                </li>
+
+            </ul>
+        </div>
+
+    </header>
+    <!-- header section ends -->
+
+
+
+
+    <!-- search-form -->
+
+    <form action="" id="search-form">
+        <input type="search" placeholder="search here...." name="" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+
+
+
+    <!-- home section starts -->
+    <section class="home" id="home">
+        <div class="swiper home-slider">
+            <div class="swiper-wrapper wrapper">
+                <div class="swiper-slide slide">
+                      <% for (let spec of special){ %>
+                    <div class="content">
+                        <span>Our Special Dish</span>
+                        <h3><%= spec.FOOD_NAME %></h3>
+                        <p>
+                            <h4>Price.<%= spec.PRICE %> Tk  </h4>
+                            <h4 style="color:#813e3f;">Rating:9.5/10</h4>
+                        </p>
+                        <a href="#" class="btn">Order Now</a>
+
+
+ <form action="/add_cart" method="POST">
+                                                        <input type="hidden" name="food_id" value="<%=spec.FOOD_ID%>">
+                                                        <input type="hidden" name="username" value="<%=username%>">
+
+                                                        <button type="submit" class="btn btn-primary">Add to Cart</button>
+                                                    </form>
+
+
+                    </div>
+                    <div class="image">
+                       <img src=<%="/img/"+spec.PIC_ID+".jpg" %> width="500" height="500">
+                    </div>
+                </div>
+
+               
+
+ <% } %>
+
+              
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <!-- home section ends -->
+
+
+    <!-- dishes section starts -->
+    <section class="dishes" id="dishes">
+        <h3 class="sub-heading"> Our Dishes</h3>
+        <h2 class="heading"> Popular Dishes</h2>
+        <div class="box-container">
+           <% for (let p of pop){ %>  
+            <div class="card">
+                <div class="imgbox">
+                   <img src=<%="/img/"+p.PIC_ID+".jpg" %>>
+                </div>
+                <div class="content">
+                    <div class="details">
+                        <h2><%= p.FOOD_NAME %><br><span>Tk. <%= p.PRICE %></span>
+                        </h2>
+                        <div class="data">
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="reviews.html" class="fas fa-eye"></a>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+
+                        </div>
+                        <div class="actionButton">
+                            <button>Order Now</button>
+
+                          
+ <form action="/add_cart" method="POST">
+                                                        <input type="hidden" name="food_id" value="<%=p.FOOD_ID%>">
+                                                        <input type="hidden" name="username" value="<%=username%>">
+
+                                                        <button type="submit" class="btn btn-primary">Add to Cart</button>
+                                                    </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+             <% } %>
+
+        
+
+        </div>
+    </section>
+    <!-- dishes section ends -->
+
+
+    <!-- dishes section starts -->
+    <section class="dishes" id="dishes">
+        <h3 class="sub-heading"> Our Dishes</h3>
+        <h2 class="heading"> Regular Dishes</h2>
+        <div class="box-container">
+
+ <% for (let burg of burger){ %>
+
+
+            <div class="card">
+                <div class="imgbox">
+                    <img src=<%="/img/"+burg.PIC_ID+".jpg" %>>
+                </div>
+                <div class="content">
+                    <div class="details">
+                        <h2> <%= burg.FOOD_NAME %><br><span>Tk. <%= burg.PRICE %></span>
+                        </h2>
+                        <div class="data">
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="reviews.html" class="fas fa-eye"></a>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+
+                        </div>
+                        
+                        <div class="actionButton">
+                            <button>Order Now</button>
+                  <!--       <a href="/add_cart">    <button>Add to Cart</button></a>-->
+                     
+
+ <form action="/add_cart" method="POST">
+                                                        <input type="hidden" name="food_id" value="<%=burg.FOOD_ID%>">
+                                                        <input type="hidden" name="username" value="<%=username%>">
+
+                                                        <button type="submit" class="btn btn-primary">Add to Cart</button>
+                                                    </form>
+
+   </div>
+                    </div>
+                </div>
+            </div>
+
+           
+            <% } %>
+        </div>
+    </section>
+    <!-- dishes section ends -->
+
+
+
+
+
+
+
+
+
+
+
+    <!-- orders section starts -->
+
+    <section class="orders" id="order">
+        <h2>Wanna see your orders?</h2>
+        <div class="card-container-order">
+            <div class="card-img-order"></div>
+            <div class="card-content-order">
+                <h3>Orders</h3>
+                <form method="get" action="order_info.html">
+                    <div class="form-row">
+                        <p>Here you can see your ordered food items.....</p>
+
+                    </div>
+
+                    <div class="form-row">
+                        <input type="submit" value="SHOW ORDERS">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- orders section ends -->
+
+    <!-- table booking section starts -->
+    <section class="table" id="table">
+        <h2>BOOK YOUR TABLE NOW</h2>
+        <div class="card-container">
+            <div class="card-img"></div>
+            <div class="card-content">
+                <h3>Reservation</h3>
+                <form>
+                    <div class="form-row">
+                        <!-- <select name="days">
+                            <option value="day-select">Select Days</option>
+                            <option value="sunday">Sunday</option>
+                            <option value="monday">Monday</option>
+                            <option value="tuesday">Tuesday</option>
+                            <option value="wednesday">Wednesday</option>
+                            <option value="thursday">Thursday</option>
+                            <option value="friday">Friday</option>
+                            <option value="saturday">Saturday</option>
+                        </select> -->
+                        <input type="date">
+                        <select name="hours">
+                            <option value="hours-select">Select Hours</option>
+                            <option value="4">4:00</option>
+                            <option value="4">5:00</option>
+                            <option value="4">6:00</option>
+                            <option value="4">7:00</option>
+                            <option value="4">8:00</option>
+                            <option value="4">9:00</option>
+                            <option value="4">10:00</option>
+                            <option value="4">11:00</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <input type="email" placeholder="Email">
+                        <input type="text" placeholder="Phone No.">
+                    </div>
+                    <div class="form-row">
+                        <input type="number" placeholder="How many people" min="1" max="12">
+                        <input type="submit" value="BOOK TABLE">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- table booking section ends -->
+
+    <!-- offer section starts -->
+    <section class="offers" id="offer">
+        <h1 class="heading">Wanna need some offers???</h1>
+
+        <div class="box-container">
+            <div class="box">
+
+                <img src="images/crispy king burger.png">
+                <h3>Crispy King Burger</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+
+                <span><del>200Tk</del></span>
+                <span>120Tk</span>
+                <!-- <del>200Tk</del>
+                <p>120Tk</p> -->
+                <div class="actionButton">
+                    <button>Order Now</button>
+                    <button>Add to cart</button>
+                </div>
+
+            </div>
+            <div class="box">
+
+                <img src="images/fried chicken.jpg">
+                <h3>Fried Chicken</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span><del>250Tk</del></span>
+                <span>180Tk</span>
+                <div class="actionButton">
+                    <button>Order Now</button>
+                    <button>Add to cart</button>
+                </div>
+
+            </div>
+            <div class="box">
+                <!-- <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a> -->
+                <img src="images/jalapeno.png">
+                <h3>Jalapeno Burger</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <!-- <i class="fas fa-star"></i> -->
+                </div>
+                <span><del>350Tk</del></span>
+                <span>200Tk</span>
+                <div class="actionButton">
+                    <button>Order Now</button>
+                    <button>Add to cart</button>
+                </div>
+
+            </div>
+            <div class="box">
+                <!-- <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a> -->
+                <img src="images/regular chicken burger.jpg">
+                <h3>Regular Chicken Burger</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <!--  <i class="fas fa-star"></i> -->
+                </div>
+                <span><del>180Tk</del></span>
+                <span>120Tk</span>
+                <div class="actionButton">
+                    <button>Order Now</button>
+                    <button>Add to cart</button>
+                </div>
+
+            </div>
+
+            <div class="box">
+                <!-- <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a> -->
+                <img src="images/regular chicken burger.jpg">
+                <h3>Regular Chicken Burger</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <!--  <i class="fas fa-star"></i> -->
+                </div>
+                <span><del>180Tk</del></span>
+                <span>120Tk</span>
+                <div class="actionButton">
+                    <button>Order Now</button>
+                    <button>Add to cart</button>
+                </div>
+
+            </div>
+
+            <div class="box">
+                <!-- <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a> -->
+                <img src="images/regular chicken burger.jpg">
+                <h3>Regular Chicken Burger</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <!--  <i class="fas fa-star"></i> -->
+                </div>
+                <span><del>180Tk</del></span>
+                <span>120Tk</span>
+                <div class="actionButton">
+                    <button>Order Now</button>
+                    <button>Add to cart</button>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- offer section ends -->
+
+    <!-- review section starts -->
+    <section id="testimonials">
+        <!-- heading -->
+        <div class="testimonial-heading">
+            <h1 style="color: #ebc999;background: #4d3227;">REVIEWS</h1>
+            <!--  <img src="images/regular chicken burger.jpg">
+            <span>Regular Chicken Burger</span> -->
+        </div>
+
+        <div class="review-container">
+            <div class="slide-container">
+                <div class="slide">
+                    <i class="fa fa-quote-right" aria-hidden="true"></i>
+                    <div class="user">
+                        <i class="fa fa-cutlery" aria-hidden="true" id="user"></i>
+                        <div class="user-info">
+                            <h3>Regular Chicken Burger</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text">You will learn programming fundamentals and basic object-oriented concepts using the latest JavaScript syntax. The concepts covered in these lessons lay the ...</p>
+                </div>
+            </div>
+
+
+
+            <div class="slide-container">
+                <div class="slide">
+                    <i class="fa fa-quote-right" aria-hidden="true"></i>
+                    <div class="user">
+                        <i class="fa fa-cutlery" aria-hidden="true" id="user"></i>
+                        <div class="user-info">
+                            <h3>Regular Beef Burger</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text">You will learn programming fundamentals and basic object-oriented concepts using the latest JavaScript syntax. The concepts covered in these lessons lay the ...</p>
+                </div>
+            </div>
+
+
+
+
+            <div class="slide-container">
+                <div class="slide">
+                    <i class="fa fa-quote-right" aria-hidden="true"></i>
+                    <div class="user">
+                        <i class="fa fa-cutlery" aria-hidden="true" id="user"></i>
+                        <div class="user-info">
+                            <h3>Chicken Cheese Burger</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text">You will learn programming fundamentals and basic object-oriented concepts using the latest JavaScript syntax. The concepts covered in these lessons lay the ...</p>
+                </div>
+            </div>
+
+
+
+            <div class="slide-container">
+                <div class="slide">
+                    <i class="fa fa-quote-right" aria-hidden="true"></i>
+                    <div class="user">
+                        <i class="fa fa-cutlery" aria-hidden="true" id="user"></i>
+                        <div class="user-info">
+                            <h3>Triple Beef Burger</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text">You will learn programming fundamentals and basic object-oriented concepts using the latest JavaScript syntax. The concepts covered in these lessons lay the ...</p>
+                </div>
+            </div>
+
+
+
+            <div class="slide-container">
+                <div class="slide">
+                    <i class="fa fa-quote-right" aria-hidden="true"></i>
+                    <div class="user">
+                        <i class="fa fa-cutlery" aria-hidden="true" id="user"></i>
+                        <div class="user-info">
+                            <h3>Regular Chicken Fry</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text">You will learn programming fundamentals and basic object-oriented concepts using the latest JavaScript syntax. The concepts covered in these lessons lay the ...</p>
+                </div>
+            </div>
+
+
+            <div class="slide-container active">
+                <div class="slide">
+                    <i class="fa fa-quote-right" aria-hidden="true"></i>
+                    <div class="user">
+                        <i class="fa fa-cutlery" aria-hidden="true" id="user"></i>
+                        <div class="user-info">
+                            <h3>Chicken Burger</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text">You will learn programming fundamentals and basic object-oriented concepts using the latest JavaScript syntax. The concepts covered in these lessons lay the ...</p>
+                </div>
+            </div>
+
+            <div id="next" class="fas fa-chevron-right" onclick="next()"></div>
+            <div id="prev" class="fas fa-chevron-left" onclick="prev()"></div>
+
+        </div>
+
+    </section>
+    <!-- review section ends -->
+
+
+
+    <!-- custom js file link -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js "></script>
+    <script src=" script.js "></script>
+
+
+    <script>
+        function menuToggle() {
+            const toggleMenu = document.querySelector('.menu');
+            toggleMenu.classList.toggle('active')
+        }
+
+
+
+
+        let slides = document.querySelectorAll('.slide-container');
+        let index = 0;
+
+        function next() {
+            slides[index].classList.remove('active');
+            index = (index + 1) % slides.length;
+            slides[index].classList.add('active');
+        }
+
+        function prev() {
+            slides[index].classList.remove('active');
+            index = (index - 1 + slides.length) % slides.length;
+            slides[index].classList.add('active');
+        }
+    </script>
+
+</body>
+
+</html>

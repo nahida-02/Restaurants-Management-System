@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/4bf265f533.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>FoodnPleasure</title>
+  </head>
+
+  <body onload="slider()">
+    <div class="banner">
+      <div class="slider">
+        <img src="img/burger-1.jpg" id="slideImg" />
+      </div>
+      <div class="overlay">
+        <div class="navbar">
+          <div class="logo">
+            <img src="img/logo.png" />
+          </div>
+        </div>
+        <div class="content">
+          <h2>
+            Let's start to explore
+            <h1><i>FOODnPLEASURE</i></h1>
+          </h2>
+          <div>
+            <a href="/login"><button type="button">EXPLORE</button></a>
+          </div>
+        </div>
+        <div class="sidebar">
+          <div class="icon-box">
+            <div class="side-text">About</div>
+            <div class="icon">
+              <i class="fa-solid fa-circle-info"></i>
+            </div>
+          </div>
+          <div class="icon-box">
+            <div class="side-text">Contact Us</div>
+            <div class="icon"><a href="/contact">
+              <i class="fa-solid fa-mobile-screen"></i></a>
+            </div>
+          </div>
+
+          <div class="icon-box">
+            <div class="side-text">Login</div>
+            <div class="icon">
+              <a href="/login"
+                ><i class="fa-solid fa-right-to-bracket"></i
+              ></a>
+            </div>
+          </div>
+          <div class="icon-box">
+            <div class="side-text">Sign Up</div>
+            <div class="icon">
+              <a href="/register"> <i class="fa-solid fa-user-plus"></i></a>
+            </div>
+            </div>
+           
+            <div class="icon-box">
+            <div class="side-text">Logout</div>
+            <div class="icon">
+              <a href="/logout"> <i class="fa-solid fa-user-plus"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var slideImg = document.getElementById("slideImg");
+      var images = new Array(
+        "img/burger-1.jpg",
+        "img/coffee-1.jpg",
+        "img/chinese-1.jpg",
+        "img/crispy_burger.jpg",
+        "img/korean-1.jpg",
+        "img/biryani-1.jpg"
+      );
+      var len = images.length;
+      var i = 0;
+
+      function slider() {
+        if (i > len - 1) {
+          i = 0;
+        }
+        slideImg.src = images[i];
+        i++;
+        setTimeout("slider()", 3000);
+      }
+    </script>
+  </body>
+</html>

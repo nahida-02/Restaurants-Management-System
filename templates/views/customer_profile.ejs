@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"  rel="stylesheet">
+    <title>Profile</title>
+</head>
+<body class="bg-light">
+    <a href="menu_burger.html"><i class="fa fa-arrow-circle-left" aria-hidden="true" style="color: black;font-size: 40px;"></i></a>
+    <img src="/img/logo-2.png">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-10 mt-5 pt-5">
+                <div class="row z-depth-3">
+                    <div class="col-sm-4 bg-dark rounded-left">
+                        <div class="card-block text-center text-white">
+                            <i class="fas fa-user-tie fa-7x mt-5"></i>
+                            <h2 class="font-weight-bold mt-4">Customer Name</h2>
+                            <p>Customer</p>
+                            <a href="/profile/editprofilecustom"><i class="far fa-edit fa-2x mb-4 text-white"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 bg-white rounded-right">
+                        <h3 class="mt-3 text-center">Customer Info</h3>
+                        <hr class="badge-dark mt-0 w-25">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p class="font-weight-bold">Full Name:</p>
+                                <h6 ><%= customer.NAME %></h6>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="font-weight-bold">Username:</p>
+                                <h6><%= customer.USERNAME %></h6>
+                            </div>
+                        </div>
+                        <h4 class="mt-3 text-center">Others</h4>
+
+                        <hr class="badge-dark">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p class="font-weight-bold">Email:</p>
+                                <h6 ><%= customer.EMAIL %></h6>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="font-weight-bold">Address:</p>
+                                <h6><%= customer.ADDRESS %></h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p class="font-weight-bold">Contact No.:</p>
+                                <h6 >01223454657</h6>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="font-weight-bold">Joining Date:</p>
+                                <h6><%= customer.JOIN_DATE %></h6>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

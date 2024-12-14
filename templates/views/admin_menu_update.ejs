@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudfare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/boostrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/admin1.css">
+    <title>Admin</title>
+</head>
+
+<body>
+    <div class="page_wrape">
+        <input type="checkbox" id="nav-toggle" />
+      
+
+
+             <%- include('../partials/sidebar.ejs') %>
+       
+        <!-- Header starts -->
+        <%- include('../partials/header.ejs') %>
+
+        <!-- main content -->
+        <div class="main-content ">
+            <div class="container mt-2">
+                <form action="/products/update_products" method="post"  class="myform" class="form-group">
+                    <div class="jumbotron" style="background-color:#C1C1C1;">
+                        <h3 class="text-center text-danger text-info mb-5">Product Update Info</h3>
+                        <div class="form-row">
+                            <!-- <div class="form-group col-md-6">
+                                <label for="input">Food ID</label>
+                                <input type="text" name="" class="form-control" placeholder="type food id">
+                            </div> -->
+                            <input type="hidden" name="foodid" value="<%=food.FOOD_ID%>">
+                            <input type="hidden" name="name" value="<%=name%>">
+                            <div class="form-group col-md-6">
+                                <label for="input">Food Name</label>
+                                <input type="text" name="foodname" class="form-control" value="<%=food.FOOD_NAME%>" >
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="input">Food Description</label>
+                                <input type="text" name="description" class="form-control" value="<%=food.DESCRIPTION%>"> 
+                                <!-- <textarea class="form-control" name="description" value="<%=food.DESCRIPTION%>"></textarea> -->
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="input">Food Category</label>
+                                <input type="text" name="category" class="form-control" value="<%=food.CATEGORY%>" >
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="input">Price</label>
+                                <input type="number" name="price" class="form-control" value="<%=food.PRICE%>" >
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input">Quantity</label>
+                                <input type="number" name="quantity" class="form-control" value="<%=food.QUANTITY%>" >
+                            </div>
+                            <!-- <div class="form-group col-md-3">
+                                <label for="input">Stock</label>
+                                <input type="number" name="stock" class="form-control" placeholder="<%=food.STOCK%>" value="32">
+                            </div> -->
+
+                             <% if(food.FOOD_TYPE==0) { %>
+                            <div class="form-group col-md-3">
+                                <label for="input">Food Type</label>
+                                <input type="text" name="type" class="form-control" value="Regular" >
+                            </div>
+                             <% } else { %>
+                                <div class="form-group col-md-3">
+                                <label for="input">Food Type</label>
+                                <input type="text" name="type" class="form-control"  value="Special">
+                        </div>
+                         <% } %>
+
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="input">Main Image/File</label>
+                                <input type="file" name="" class="form-control" placeholder="type file" value="images/burger.png">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12 text-center text-right mt-5">
+                                <button type="submit" class="btn btn-success btn-lg">Update</button>
+                                <!-- <button type="submit" class="btn btn-danger btn-lg">Delete</button> -->
+                            </div>
+                        </div>
+
+                    </div>
+
+            </div>
+            </form>
+        </div>
+
+
+
+    </div>
+
+
+    </div>
+
+
+
+</body>
+
+</html>

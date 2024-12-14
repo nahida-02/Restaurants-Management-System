@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- <link rel="stylesheet"  href="http://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudfare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/boostrap/4.3.1/js/bootstrap.min.js"></script> -->
+    <link rel="stylesheet" href="/css/admin1.css">
+    <style>
+        .main-content  table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: rosybrown;
+  color: black;
+}
+tr:nth-child(odd){
+    background-color: black;
+    color: white;
+}
+
+tr a:nth-child(even) {
+  background-color: rosybrown;
+  color: black;
+}
+tr a:nth-child(odd){
+    background-color: black;
+    color: white;
+}
+
+.fa-eye{
+    color: white;
+
+}
+.fa-eye hover{
+    color: brown;   
+}
+
+    </style>
+    <title>Admin</title>
+</head>
+
+<body>
+    <div class="page_wrape">
+        <input type="checkbox" id="nav-toggle">
+  <!--      <div class="side-bar">
+            <div class="logo">
+                <a href="#"><img src="/img/logo-2.png"></a>
+            </div>
+            <div class="avtar">
+                <div class="avtar-img">
+                    <!-- <i class="fa fa-user" aria-hidden="true" style="width: 20px;height:20px;margin-right:10px;"></i> 
+                </div>
+                <div class="name-pos">
+                    <h2>Admin</h2>
+                </div>
+            </div>
+            <div class="side-bar-nav">
+                <ul>
+                    <li>
+                        <a href="/admin">
+                            <span><i class="fa fa-home" aria-hidden="true"></i></span>
+                            <span class="nav-link">DashBoard</span>
+
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="">
+                            <span><i class="fa fa-users" aria-hidden="true"></i></span>
+                            <span class="nav-link">Users <span>&rsaquo;</span></span>
+
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="admin_show_admin.html">Admin</a>
+                            </li>
+                            <li>
+                                <a href="admin_show_customers.html">Customer</a>
+                            </li>
+                            <li>
+                                <a href="admin_show_deliveryman.html">Delivery Man</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="admin_main_restaurants.html">
+                            <span><i class="fa fa-bars" aria-hidden="true"></i></span>
+                            <span class="nav-link">Restaurants</span>
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="admin_main_add_products.html">
+                            <span><i class="fa fa-cart-plus" aria-hidden="true"></i></span>
+                            <span class="nav-link">Add Products</span>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin_order.html">
+                            <span><i class="fa fa-cutlery" aria-hidden="true"></i></span>
+                            <span class="nav-link">Orders</span>
+
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="">
+                            <span><i class="fa fa-object-ungroup" aria-hidden="true"></i></span>
+                            <span class="nav-link">Offers<span>&rsaquo;</span></span>
+
+                        </a>
+                        <ul>
+
+                            <li>
+                                <a href="#">Current Offer</a>
+                            </li>
+                            <li>
+                                <a href="#">Create Offer</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
+                            <span class="nav-link">Table Booking</span>
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="">
+                            <span><i class="fa fa-usd" aria-hidden="true"></i></span>
+                            <span class="nav-link">Transactions</span>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span><i class="fa fa-sign-out" aria-hidden="true"></i>
+                        </span>
+                            <span class="nav-link">Log Out</span>
+
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    -->
+     <%- include('../partials/sidebar.ejs') %>
+     <%- include('../partials/header.ejs') %>
+        <!-- Header starts -->
+        <!-- <header>
+            <div class="head_inner">
+                <div class="right-part">
+                    <form>
+                        <input type="text" placeholder="Search here..." required="">
+                        <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </form>
+                </div>
+                <div class="left-part">
+                    <ul>
+                        <li>
+                            <div class="profile">
+                                <div class="avtar-img">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                </div>
+                                <div class="avtar-name">
+                                    <h3>Admin</h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="nav-toggle"><span class="bar"><i class=" fa fa-bars " aria-hidden="true "></i></span></label>
+                        </li>
+                         <li>
+                            <label for="nav-toggle"><span class="bar"><i class=" fa fa-bars " aria-hidden="true "></i></span></label>
+                            <span><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header> -->
+
+
+        <!-- main content -->
+        <div class="main-content ">
+         <h2 style="text-align:center;">Order Details</h2>
+          <div class="back_button">
+              <a href="admin_order.html"><button>Back to Orders</button></a>
+          </div> 
+         <!--  <h2 style="padding-top: 25px;"><i>Order ID:</i><span>12345</span></h2> -->
+          <div class="detail">
+              <div class="box">
+                  <div class="icon">
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                  </div>
+                  <div class="order_detail">
+                      <h3>Customer Details</h3>
+                      <p>Name: Nahida Marzan</p>
+                      <p>Email: marzan@gmail.com</p>
+                  </div>
+              </div>
+              
+              <div class="box">
+                  <div class="icon">
+                      <i class="fa fa-truck" aria-hidden="true"></i>
+                  </div>
+                  <div class="order_detail">
+                      <h3>Order Details</h3>
+                      <p><i>Order ID:</i><span>12345</span></p>
+                      <p>Payment Method: Credit Card</p>
+                      <p>Date: 11/8/2022</p>
+                  </div>
+              </div>
+              <div class="box">
+                  <div class="icon">
+                      <i class="fa fa-map-marker" aria-hidden="true"></i>
+                  </div>
+                  <div class="order_detail">
+                      <h3>Delivery Address</h3>
+                      <p>Address: Mirpur 12</p>
+                      <p>Dhaka</p>
+                  </div>
+              </div>
+              
+          </div>
+
+          <div>
+            <h2 style="padding: 25px;text-align: center;">Order Info</h2>
+              <table style="width:100%">
+                <tr>
+                  
+                  <th>Food Name</th>
+                  <th>Unit Price</th>
+                  <th>Quantity</th>
+                  <th>Total Price</th>
+                </tr>
+                <tr>
+                 
+                  <td>Burger</td>
+                  <td>120Tk</td>
+                  <td>3</td>
+                  <td>360Tk</td>
+                </tr>
+                <tr>
+                   
+                    <td>Coffee</td>
+                    <td>200Tk</td>
+                    <td>2</td>
+                    <td>400Tk</td>
+                </tr>
+               
+              </table>
+           
+          </div>
+
+          <div class="price">
+             <p>Total: <span>760Tk</span></p>
+          </div>
+
+          <div class="buttons">
+              <a href="#"><button>Accept</button></a>
+              <a href="#"><button>Decline</button></a>
+          </div>
+        </div>
+
+
+    </div>
+
+
+
+</body>
+
+</html>
